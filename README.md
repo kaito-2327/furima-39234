@@ -36,8 +36,8 @@ Things you may want to cover:
 | last_kana           | string   | null: false               |
 | birthday            | date     | null: false               |
 
-has_many　items 
-has_many　buys 
+has_many　:items 
+has_many　:buys 
 
 ## items テーブル
 
@@ -53,8 +53,8 @@ has_many　buys
 | take_id        | integer    | null: false                    | 日数
 | user           | references | null: false, foreign_key: true | 
 
-belongs_to　user
-has_one　   buy
+belongs_to　:user
+has_one　   :buy
 
 ## buys テーブル
 
@@ -63,9 +63,9 @@ has_one　   buy
 | user      | references | null: false, foreign_key: true | 
 | item      | references | null: false, foreign_key: true | 
 
-has_one　   item 
-belongs_to　users 
-has_one　delivery
+belongs_to :item 
+belongs_to　:user 
+has_one　:delivery
 
 ## deliveries テーブル
 
@@ -79,4 +79,4 @@ has_one　delivery
 | phone          | string     | null: false                    | 電話
 | buy            | references | null: false, foreign_key: true | 購入履歴
   
-belongs_to　delivery 
+belongs_to　:delivery 
