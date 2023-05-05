@@ -36,26 +36,25 @@ Things you may want to cover:
 | last_kana           | string   | null: false               |
 | birthday            | date     | null: false               |
 
-has_many　items テーブル
-has_many　buys テーブル
+has_many　items 
+has_many　buys 
 
 ## items テーブル
 
 | Column         | Type       | Options                        |
 | -------------- | ---------- | ------------------------------ |
-| title          | string     | null: false,                   | 商品名
-| price          | integer    | null: false,                   | 価格
-| explan         | text       | null: false,                   | 商品の説明
-| category_id    | integer    | null: false,                   | カテゴリー
-| situation_id   | integer    | null: false,                   | 状態
-| charge_id      | integer    | null: false,                   | 配送料の負担
-| prefectures_id | integer    | null: false,                   | 地域
-| day_id         | integer    | null: false,                   | 日数
+| title          | string     | null: false                    | 商品名
+| price          | integer    | null: false                    | 価格
+| explan         | text       | null: false                    | 商品の説明
+| category_id    | integer    | null: false                    | カテゴリー
+| situation_id   | integer    | null: false                    | 状態
+| charge_id      | integer    | null: false                    | 配送料の負担
+| prefecture_id  | integer    | null: false                    | 地域
+| take_id        | integer    | null: false                    | 日数
 | user           | references | null: false, foreign_key: true | 
 
-be_longs_to　users テーブル
-has_many　   buys テーブル
-has_many   　delivery テーブル
+belongs_to　users 
+has_one　   buys 
 
 ## buys テーブル
 
@@ -64,21 +63,20 @@ has_many   　delivery テーブル
 | user      | references | null: false, foreign_key: true | 
 | item      | references | null: false, foreign_key: true | 
 
-has_many　   items テーブル
-be_longs_to　users テーブル
-be_longs_to　delivery テーブル
+has_one　   items 
+belongs_to　users 
+has_one　deliveries 
 
-## delivery テーブル
+## deliveries テーブル
 
 | Column         | Type       | Options                        |
 | -------------- | ---------- | ------------------------------ |
-| post_code      | string     | null: false,                   | 郵便番号
-| prefectures_id | integer    | null: false,                   | 地域
-| municipality   | string     | null: false,                   | 市町村
-| address        | string     | null: false,                   | 番地
+| post_code      | string     | null: false                    | 郵便番号
+| prefecture_id  | integer    | null: false                    | 地域
+| municipality   | string     | null: false                    | 市町村
+| address        | string     | null: false                    | 番地
 | bldg           | string     |                                | 建物
-| phone          | string     | null: false,                   | 電話
+| phone          | string     | null: false                    | 電話
 | buy            | references | null: false, foreign_key: true | 購入履歴
- 
-has_one　users テーブル
-be_longs_to　delivery テーブル
+  
+belongs_to　delivery 
