@@ -53,8 +53,8 @@ has_many　buys
 | take_id        | integer    | null: false                    | 日数
 | user           | references | null: false, foreign_key: true | 
 
-belongs_to　users 
-has_one　   buys 
+belongs_to　user
+has_one　   buy
 
 ## buys テーブル
 
@@ -63,9 +63,9 @@ has_one　   buys
 | user      | references | null: false, foreign_key: true | 
 | item      | references | null: false, foreign_key: true | 
 
-has_one　   items 
+has_one　   item 
 belongs_to　users 
-has_one　deliveries 
+has_one　delivery
 
 ## deliveries テーブル
 
