@@ -5,15 +5,15 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
         VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
-         validates :password, presence: true, length: { minimum: 6 },format: { with: VALID_PASSWORD_REGEX , message: "には英字と数字の両方を含めて設定してください"}
+         validates :password, format: { with: VALID_PASSWORD_REGEX , message: "には英字と数字の両方を含めて設定してください"}
 
          validates :nickname, presence: true
-         validates :first_name, presence: true, format: {with: /\A[ぁ-んァ-ン一-龥]+\z/, message: "には全角文字を使用してください"}
-         validates :last_name, presence: true,  format: {with: /\A[ぁ-んァ-ン一-龥]+\z/, message: "には全角文字を使用してください"}
+         validates :first_name, presence: true, format: {with: /\A[ぁ-んァ-ン一-龥々]+\z/, message: "には全角文字を使用してください"}
+         validates :last_name, presence: true,  format: {with: /\A[ぁ-んァ-ン一-龥々]+\z/, message: "には全角文字を使用してください"}
          validates :first_kana, presence: true, format: {with: /\A[ァ-ヶー－]+\z/, message: "には全角カタカナのみで入力して下さい"}
          validates :last_kana, presence: true,  format: {with: /\A[ァ-ヶー－]+\z/, message: "には全角カタカナのみで入力して下さい"}
          validates :birthday, presence: true 
 
-  has_many :items
-  has_many :buys
+  # has_many :items
+  # has_many :buys
 end

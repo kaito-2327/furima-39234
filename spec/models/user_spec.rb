@@ -11,6 +11,10 @@ RSpec.describe User, type: :model do
       # nul:false, presence: true のテスト ▼
       # ニックネームのテスト ▼
 
+      it '必要事項を全て過不足なく入力すると登録できる' do
+        expect(@user).to be_valid
+      end
+
       it "nicknameがない場合は登録できないこと" do # テストしたいことの内容
         @user.nickname = ''
         @user.valid?
