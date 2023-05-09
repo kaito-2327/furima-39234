@@ -11,10 +11,13 @@ RSpec.describe User, type: :model do
       # nul:false, presence: true のテスト ▼
       # ニックネームのテスト ▼
 
+    context '新規登録できる場合' do
       it '必要事項を全て過不足なく入力すると登録できる' do
         expect(@user).to be_valid
       end
+    end
 
+    context '新規登録できない場合' do
       it "nicknameがない場合は登録できないこと" do # テストしたいことの内容
         @user.nickname = ''
         @user.valid?
@@ -137,5 +140,6 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("Birthday can't be blank")
       end
+    end
   end
 end
