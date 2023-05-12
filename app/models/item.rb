@@ -12,12 +12,11 @@ class Item < ApplicationRecord
 
   validates :image,         presence: true
   validates :title,         presence: true
-  validates :price,         presence: true, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
+  validates :price,         presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
   validates :explan,        presence: true
   validates :category_id,   numericality: { other_than: 1 } 
   validates :situation_id,  numericality: { other_than: 1 } 
   validates :charge_id,     numericality: { other_than: 1 } 
   validates :prefecture_id, numericality: { other_than: 1 } 
   validates :take_id,       numericality: { other_than: 1 } 
-  validates :user,          presence: true
 end

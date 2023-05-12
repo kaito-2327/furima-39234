@@ -49,33 +49,33 @@ RSpec.describe User, type: :item do
       end
 
       it "category_idがない場合は登録できないこと" do # テストしたいことの内容
-        @item.category_id = ''
+        @item.category_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Category is not a number")# errorsメソッドを使用して、「バリデーションにより保存ができない状態である場合なぜできないのか」を確認し、.to include("を入力してください")でエラー文を記述(今回のRailsを日本語化しているのでエラー文も日本語)
+        expect(@item.errors.full_messages).to include("Category must be other than 1")# errorsメソッドを使用して、「バリデーションにより保存ができない状態である場合なぜできないのか」を確認し、.to include("を入力してください")でエラー文を記述(今回のRailsを日本語化しているのでエラー文も日本語)
       end
 
       it "situation_idがない場合は登録できないこと" do # テストしたいことの内容
-        @item.situation_id = ''
+        @item.situation_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Situation is not a number")# errorsメソッドを使用して、「バリデーションにより保存ができない状態である場合なぜできないのか」を確認し、.to include("を入力してください")でエラー文を記述(今回のRailsを日本語化しているのでエラー文も日本語)
+        expect(@item.errors.full_messages).to include("Situation must be other than 1")# errorsメソッドを使用して、「バリデーションにより保存ができない状態である場合なぜできないのか」を確認し、.to include("を入力してください")でエラー文を記述(今回のRailsを日本語化しているのでエラー文も日本語)
       end
 
       it "charge_idがない場合は登録できないこと" do # テストしたいことの内容
-        @item.charge_id = ''
+        @item.charge_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Charge is not a number")# errorsメソッドを使用して、「バリデーションにより保存ができない状態である場合なぜできないのか」を確認し、.to include("を入力してください")でエラー文を記述(今回のRailsを日本語化しているのでエラー文も日本語)
+        expect(@item.errors.full_messages).to include("Charge must be other than 1")# errorsメソッドを使用して、「バリデーションにより保存ができない状態である場合なぜできないのか」を確認し、.to include("を入力してください")でエラー文を記述(今回のRailsを日本語化しているのでエラー文も日本語)
       end
 
       it "prefecture_idがない場合は登録できないこと" do # テストしたいことの内容
-        @item.prefecture_id = ''
+        @item.prefecture_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Prefecture is not a number")# errorsメソッドを使用して、「バリデーションにより保存ができない状態である場合なぜできないのか」を確認し、.to include("を入力してください")でエラー文を記述(今回のRailsを日本語化しているのでエラー文も日本語)
+        expect(@item.errors.full_messages).to include("Prefecture must be other than 1")# errorsメソッドを使用して、「バリデーションにより保存ができない状態である場合なぜできないのか」を確認し、.to include("を入力してください")でエラー文を記述(今回のRailsを日本語化しているのでエラー文も日本語)
       end
 
       it "take_idがない場合は登録できないこと" do # テストしたいことの内容
-        @item.take_id = ''
+        @item.take_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Take is not a number")# errorsメソッドを使用して、「バリデーションにより保存ができない状態である場合なぜできないのか」を確認し、.to include("を入力してください")でエラー文を記述(今回のRailsを日本語化しているのでエラー文も日本語)
+        expect(@item.errors.full_messages).to include("Take must be other than 1")# errorsメソッドを使用して、「バリデーションにより保存ができない状態である場合なぜできないのか」を確認し、.to include("を入力してください")でエラー文を記述(今回のRailsを日本語化しているのでエラー文も日本語)
       end
 
       it 'imageが空では保存できない' do
