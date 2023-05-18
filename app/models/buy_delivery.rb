@@ -13,9 +13,6 @@ class BuyDelivery
   end
   validates :prefecture_id, numericality: { other_than: 1 } 
 
-  association :user_id
-    association :item_id
-
   def save
     # 購入情報を保存し、変数buyに代入する
     buy = Buy.create(item_id: item_id, user_id: user_id)
