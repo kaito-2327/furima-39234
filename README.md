@@ -80,4 +80,4 @@ has_one　:delivery
 | phone          | string     | null: false                    | 電話
 | buy            | references | null: false, foreign_key: true | 購入履歴
   
-belongs_to　:delivery 
+belongs_to　:buy
